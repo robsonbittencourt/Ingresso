@@ -1,16 +1,12 @@
 package ingresso;
 
-public class DescontoCrianca implements Desconto {
-	private static final double DESCONTO_DEZ_PORCENTO = 0.1;
-	private static final double DESCONTO_QUINZE_PORCENTO = 0.15;
+public class DescontoCrianca extends Desconto {
 
-	@Override
-	public double getDescontoSegunda() {
-		return DESCONTO_DEZ_PORCENTO;
-	}
-
-	@Override
-	public double getDescontoTerca() {
-		return DESCONTO_QUINZE_PORCENTO;
+	public DescontoCrianca() {
+		this.descontoSegunda = 10;
+		this.descontoTerca = 15;
+		this.descontoQuarta = 30;
+		this.descontoQuinta = 0;
+		this.descontoSexta = 11;
 	}
 }

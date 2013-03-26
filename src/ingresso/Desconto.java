@@ -1,7 +1,26 @@
 package ingresso;
 
-public interface Desconto {
-	double getDescontoSegunda();
+public abstract class Desconto {
+	protected double descontoSegunda, descontoTerca, descontoQuarta,
+			descontoQuinta, descontoSexta;
+	
+	public double getDescontoSegunda() {
+		return descontoSegunda;
+	}
 
-	double getDescontoTerca();
+	public double getDescontoTerca() {
+		return descontoTerca;
+	}
+	
+	public double getDescontoQuarta() {
+		return descontoQuarta;
+	}
+	
+	public double getDescontoQuinta() {
+		return descontoQuinta;
+	}
+	
+	public double getDescontoSexta() {
+		return descontoSexta;
+	}	
 }
