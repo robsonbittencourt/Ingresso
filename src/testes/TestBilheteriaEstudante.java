@@ -8,8 +8,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class TestBilheteriaEstudante {
+	private static final double VALOR_INGRESSO_PADRAO = 8;
 	Bilheteria bilheteria;
 	Ingresso ingressoEstudante;
+	
 
 	@Before
 	public void setUp() {
@@ -17,44 +19,44 @@ public class TestBilheteriaEstudante {
 	}
 
 	@Test
-	public void ingressoParaEstudanteEmSegunda_25_03_2013_DeveTerTrintaCincoPorcentoDeDesconto() {
+	public void ingressoParaEstudanteSegundaDeveTerTrintaCincoPorcentoDeDesconto() {
 		ingressoEstudante = bilheteria.criarIngressoEstudante("25/03/2013");
 		assertEquals(5.2, ingressoEstudante.getValorDoIngresso(), .0);
 	}
 
 	@Test
-	public void ingressoParaEstudanteEmTerca_26_03_2013_DeveTerTrintaCincoPorcentoDeDesconto() {
+	public void ingressoParaEstudanteTercaDeveTerTrintaCincoPorcentoDeDesconto() {
 		ingressoEstudante = bilheteria.criarIngressoEstudante("26/03/2013");
 		assertEquals(5.2, ingressoEstudante.getValorDoIngresso(), .0);
 	}
 
 	@Test
-	public void ingressoParaEstudanteEmQuarta_27_03_2013_DeveTerCinquentaPorcentoDeDesconto() {
+	public void ingressoParaEstudanteQuartaDeveTerCinquentaPorcentoDeDesconto() {
 		ingressoEstudante = bilheteria.criarIngressoEstudante("27/03/2013");
 		assertEquals(4, ingressoEstudante.getValorDoIngresso(), .0);
 	}
 
 	@Test
-	public void ingressoParaEstudanteEmQuinta_28_03_2013_DeveTerTrintaCincoPorcentoDeDesconto() {
+	public void ingressoParaEstudanteQuintaDeveTerTrintaCincoPorcentoDeDesconto() {
 		ingressoEstudante = bilheteria.criarIngressoEstudante("28/03/2013");
 		assertEquals(5.2, ingressoEstudante.getValorDoIngresso(), .0);
 	}
 
 	@Test
-	public void ingressoParaEstudanteEmSexta_29_03_2013_DeveTerTrintaCincoPorcentoDeDesconto() {
+	public void ingressoParaEstudanteSextaDeveTerTrintaCincoPorcentoDeDesconto() {
 		ingressoEstudante = bilheteria.criarIngressoEstudante("29/03/2013");
 		assertEquals(5.2, ingressoEstudante.getValorDoIngresso(), .0);
 	}
 
 	@Test
-	public void ingressoParaEstudanteEmSabado_30_03_2013_NaoDeveTerDesconto() {
+	public void ingressoParaEstudanteSabadoNaoDeveTerDesconto() {
 		ingressoEstudante = bilheteria.criarIngressoEstudante("30/03/2013");
-		assertEquals(8, ingressoEstudante.getValorDoIngresso(), .0);
+		assertEquals(VALOR_INGRESSO_PADRAO, ingressoEstudante.getValorDoIngresso(), .0);
 	}
 
 	@Test
-	public void ingressoParaEstudanteEmDomingo_31_03_2013_NaoDeveTerDesconto() {
+	public void ingressoParaEstudanteDomingoNaoDeveTerDesconto() {
 		ingressoEstudante = bilheteria.criarIngressoEstudante("31/03/2013");
-		assertEquals(8, ingressoEstudante.getValorDoIngresso(), .0);
+		assertEquals(VALOR_INGRESSO_PADRAO, ingressoEstudante.getValorDoIngresso(), .0);
 	}
 }

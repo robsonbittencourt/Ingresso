@@ -8,6 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class TestBilheteriaCrianca {
+	private static final double VALOR_INGRESSO_PADRAO = 5.5;
 	Bilheteria bilheteria;
 	Ingresso ingressoCrianca;
 
@@ -17,44 +18,44 @@ public class TestBilheteriaCrianca {
 	}
 
 	@Test
-	public void ingressoParaCriancaEmSegunda_25_03_2013_DeveTerDezPorcentoDeDesconto() {
+	public void ingressoParaCriancaSegundaDeveTerDezPorcentoDeDesconto() {
 		ingressoCrianca = bilheteria.criarIngressoCrianca("25/03/2013");
 		assertEquals(4.95, ingressoCrianca.getValorDoIngresso(), .0);
 	}
 
 	@Test
-	public void ingressoParaCriancaEmTerca_26_03_2013_DeveTerQuinzePorcentoDeDesconto() {
+	public void ingressoParaCriancaTercaDeveTerQuinzePorcentoDeDesconto() {
 		ingressoCrianca = bilheteria.criarIngressoCrianca("26/03/2013");
 		assertEquals(4.675, ingressoCrianca.getValorDoIngresso(), .0);
 	}
 
 	@Test
-	public void ingressoParaCriancaEmQuarta_27_03_2013_DeveTerTrintaPorcentoDeDesconto() {
+	public void ingressoParaCriancaQuartaDeveTerTrintaPorcentoDeDesconto() {
 		ingressoCrianca = bilheteria.criarIngressoCrianca("27/03/2013");
 		assertEquals(3.85, ingressoCrianca.getValorDoIngresso(), .0);
 	}
 
 	@Test
-	public void ingressoParaCriancaEmQuinta_28_03_2013_NaoDeveTerDesconto() {
+	public void ingressoParaCriancaQuintaNaoDeveTerDesconto() {
 		ingressoCrianca = bilheteria.criarIngressoCrianca("28/03/2013");
-		assertEquals(5.5, ingressoCrianca.getValorDoIngresso(), .0);
+		assertEquals(VALOR_INGRESSO_PADRAO, ingressoCrianca.getValorDoIngresso(), .0);
 	}
 
 	@Test
-	public void ingressoParaCriancaEmSexta_29_03_2013_DeveTerOnzePorcentoDeDesconto() {
+	public void ingressoParaCriancaSextaDeveTerOnzePorcentoDeDesconto() {
 		ingressoCrianca = bilheteria.criarIngressoCrianca("29/03/2013");
 		assertEquals(4.895, ingressoCrianca.getValorDoIngresso(), .0);
 	}
 
 	@Test
-	public void ingressoParaCriancaEmSabado_30_03_2013_NaoDeveTerDesconto() {
+	public void ingressoParaCriancaSabadoNaoDeveTerDesconto() {
 		ingressoCrianca = bilheteria.criarIngressoCrianca("30/03/2013");
-		assertEquals(5.5, ingressoCrianca.getValorDoIngresso(), .0);
+		assertEquals(VALOR_INGRESSO_PADRAO, ingressoCrianca.getValorDoIngresso(), .0);
 	}
 
 	@Test
-	public void ingressoParaCriancaEmDomingo_31_03_2013_NaoDeveTerDesconto() {
+	public void ingressoParaCriancaDomingoNaoDeveTerDesconto() {
 		ingressoCrianca = bilheteria.criarIngressoCrianca("31/03/2013");
-		assertEquals(5.5, ingressoCrianca.getValorDoIngresso(), .0);
+		assertEquals(VALOR_INGRESSO_PADRAO, ingressoCrianca.getValorDoIngresso(), .0);
 	}
 }
